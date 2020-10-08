@@ -1,4 +1,4 @@
-import {createAndAppend, setElementHtmlText} from './createElement'
+import {createAndAppend, setElementHtmlText} from './createElement';
 
 function createHomePage() {
   createAndAppend('h3', 'about', 'content');
@@ -8,4 +8,4 @@ function createHomePage() {
   setElementHtmlText('about-paragraph', 'A paragraph about the restaruant');
 }
 
-export {createHomePage}
+export {createHomePage};

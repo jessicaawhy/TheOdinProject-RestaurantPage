@@ -1,4 +1,4 @@
-import {createAndAppend, setElementHtmlText} from './createElement'
+import {createAndAppend, setElementHtmlText} from './createElement';
 
 function createHeader() {
   createAndAppend('h1', 'restaurantName', 'content');
@@ -16,4 +16,4 @@ function createHeader() {
   setElementHtmlText('contact', 'Contact');
 }
 
-export {createHeader}
+export {createHeader};
