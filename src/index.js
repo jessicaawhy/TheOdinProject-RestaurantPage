@@ -1,7 +1,9 @@
 import {createHeader} from './header';
 import {createHomePage} from './home';
-import {createContactPage} from './contact'
+import {createContactPage} from './contact';
+import {createMenuPage} from './menu';
 
-createHeader()
-createHomePage()
-createContactPage()
+createHeader();
+createHomePage();
+createContactPage();
+createMenuPage();

@@ -2,7 +2,7 @@ import {createAndAppend, setElementHtmlText} from './createElement';
 
 function createHeader() {
   createAndAppend('h1', 'restaurantName', 'content');
-  setElementHtmlText('restaurantName', 'Yummy Yummy')
+  setElementHtmlText('restaurantName', 'Yummy Yummy');
   
   createAndAppend('ul', 'linkContainer', 'content');
   
