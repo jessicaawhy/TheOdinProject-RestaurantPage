@@ -1,3 +1,88 @@
 * {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header-logo {
+  height: 50px;
+  width: 50px;
+  padding: 15px;
+}
+
+#link-container > * {
+  padding: 15px;
+}
+
+#home-photo {
+  width: 100%;
+}
+
+h1, p {
+  width: 50%;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.container {
+  position: relative;
+  text-align: left;
+}
+
+.centered {
+  position: absolute;
+  top: 20%;
+  left: 7%;
+  width: 50%;
+  color: white;
+  font-size: 50px;
+}
+
+.left {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  color: white;
+  font-size: 30px;
+}
+
+.right {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 95%;
+  color: white;
+  font-size: 30px;
+}
+
+.container:hover .left, .container:hover .right {
+  display: block;
+}
+
+.left:hover, .right:hover {
+  color: gray;
+}
+
+.circles {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.circles > * {
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+  background-color: lightslategray;
+  margin: 5px;
 }

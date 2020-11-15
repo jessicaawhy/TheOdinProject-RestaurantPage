@@ -1,23 +1,19 @@
 {
-  "name": "restaurant-page",
+  "name": "theodinproject-restaurantpage",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jessicaawhy/restaurant-page.git"
+    "url": "git+https://github.com/jessicaawhy/TheOdinProject-RestaurantPage.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jessicaawhy/restaurant-page/issues"
+    "url": "https://github.com/jessicaawhy/TheOdinProject-RestaurantPage/issues"
   },
-  "homepage": "https://github.com/jessicaawhy/restaurant-page#readme",
-  "devDependencies": {
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12"
-  },
-  "description": ""
+  "homepage": "https://github.com/jessicaawhy/TheOdinProject-RestaurantPage#readme"
 }
