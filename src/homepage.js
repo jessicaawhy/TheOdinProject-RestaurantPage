@@ -32,6 +32,7 @@ let currImgIndex = 1;
 let intervalId;
 
 function createHomePage() {
+  currImgIndex = 1;
   const container = document.getElementById('container')
 
   const photoContainer = document.createElement('div');
@@ -122,7 +123,7 @@ function rotateImage(e) {
 
 function removeContainerElements() {
   const container = document.getElementById('container');
-  // clearInterval(intervalId);
+  clearInterval(intervalId);
   while (container.firstChild) {
     container.removeChild(container.firstChild);
   }
