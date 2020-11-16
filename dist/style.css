@@ -25,14 +25,6 @@
   width: 100%;
 }
 
-h1, p {
-  width: 50%;
-  margin-left: 40px;
-  margin-right: 40px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
 /* Photo Container Section */
 .container {
   position: relative;
@@ -46,7 +38,7 @@ h1, p {
   transition: ease-out;
 }
 
-.centered {
+#text-container {
   position: absolute;
   top: 20%;
   left: 7%;
@@ -54,30 +46,3 @@ h1, p {
   color: white;
   font-size: 50px;
 }
-
-#previous {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 5%;
-  color: white;
-  font-size: 30px;
-}
-
-#next {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 95%;
-  color: white;
-  font-size: 30px;
-}
-
-.container:hover #previous, .container:hover #next {
-  display: block;
-}
-
-#previous:hover, #next:hover {
-  color: gray;
-}
-
