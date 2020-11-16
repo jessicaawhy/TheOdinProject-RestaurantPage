@@ -20,6 +20,10 @@ function createHeader() {
     current.innerHTML = link.toUpperCase();
     linkContainer.appendChild(current);
   });
+
+  const container = document.createElement('div');
+  container.setAttribute('id', 'container');
+  content.appendChild(container);
 }
 
 export { createHeader };

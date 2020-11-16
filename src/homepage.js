@@ -32,11 +32,7 @@ let currImgIndex = 1;
 let intervalId;
 
 function createHomePage() {
-  const content = document.getElementById('content');
-
-  const container = document.createElement('div');
-  container.setAttribute('id', 'container');
-  content.appendChild(container);
+  const container = document.getElementById('container')
 
   const photoContainer = document.createElement('div');
   photoContainer.setAttribute('id', 'photo-container');
@@ -124,4 +120,12 @@ function rotateImage(e) {
   text.innerHTML = images[currImgIndex]['text'];
 }
 
-export { createHomePage, rotateImage };
+function removeContainerElements() {
+  const container = document.getElementById('container');
+  // clearInterval(intervalId);
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
+}
+
+export { createHomePage, removeContainerElements };

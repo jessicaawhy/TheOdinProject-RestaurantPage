@@ -1,5 +1,3 @@
 import { createHeader } from './header';
-import { createHomePage } from './homepage';
-
-createHeader();
-createHomePage();
+import { createHomePage, removeContainerElements } from './homepage';
+import { createMenuPage } from './menu';   
