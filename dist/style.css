@@ -68,7 +68,8 @@
 
 #res-container, 
 #chef-container,
-#menu-container {
+#menu-container,
+#location-container {
   display: flex;
   flex-direction: column;
   margin-top: 25px;
@@ -93,4 +94,8 @@ p {
   width: 50%;
   align-self: center;
   margin: 10px;
+}
+
+#location-container p {
+  text-align: center;
 }
