@@ -8,7 +8,6 @@ function renderPage() {
   createHomePage();
 
   let links = document.getElementById('link-container').childNodes;
-  console.log(links)
   links.forEach(link => {
     link.addEventListener('click', (e) => updatePage(e))
   })

@@ -5,11 +5,6 @@ function createLocationPage() {
   photoContainer.setAttribute('id', 'photo-container');
   container.appendChild(photoContainer);
 
-  // const textContainer = document.createElement('h1');
-  // textContainer.setAttribute('id', 'text-container');
-  // textContainer.innerHTML = '';
-  // container.appendChild(textContainer);
-
   const image = document.createElement('img');
   image.setAttribute('src', 'location.jpg')
   image.style.display = 'block';

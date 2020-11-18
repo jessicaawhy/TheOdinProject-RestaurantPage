@@ -99,3 +99,11 @@ p {
 #location-container p {
   text-align: center;
 }
+
+#link-container:hover > *{
+  color: lightslategray;
+}
+
+#link-container a:hover {
+  color: black;
+}
