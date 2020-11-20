@@ -1,18 +1,25 @@
 function createLocationPage() {
   const container = document.getElementById('container');
 
-  const photoContainer = document.createElement('div');
-  photoContainer.setAttribute('id', 'photo-container');
-  container.appendChild(photoContainer);
+  const pageContainer = document.createElement('div');
+  pageContainer.style.display = "none";
 
+  const photoContainer = document.createElement('div');
   const image = document.createElement('img');
+
+  pageContainer.setAttribute('id', 'location-page');
+  photoContainer.setAttribute('id', 'photo-container');
+  
+  container.appendChild(pageContainer);
+  pageContainer.appendChild(photoContainer);
+  photoContainer.appendChild(image);
+  
   image.setAttribute('src', 'location.jpg')
   image.style.display = 'block';
-  photoContainer.appendChild(image);
 
   const locationContainer = document.createElement('div');
   locationContainer.setAttribute('id', 'location-container')
-  container.appendChild(locationContainer);
+  pageContainer.appendChild(locationContainer);
   const header = document.createElement('h2');
   header.innerHTML = 'LOCATION';
   locationContainer.appendChild(header);
@@ -29,7 +36,7 @@ function createLocationPage() {
 
   let mapContainer = document.createElement('div');
   mapContainer.setAttribute('id', 'map');
-  container.appendChild(mapContainer);
+  pageContainer.appendChild(mapContainer);
 }
 
 export { createLocationPage };

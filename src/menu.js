@@ -1,23 +1,30 @@
 function createMenuPage() {
   const container = document.getElementById('container');
 
+  const pageContainer = document.createElement('div');
+  pageContainer.style.display = "none";
+
   const photoContainer = document.createElement('div');
-  photoContainer.setAttribute('id', 'photo-container');
-  container.appendChild(photoContainer);
-
-  const textContainer = document.createElement('h1');
-  textContainer.setAttribute('id', 'text-container');
-  textContainer.innerHTML = 'THE INTERPLAY OF <br>EARTH AND SEA, <br>TRADITION AND EVOLUTION';
-  container.appendChild(textContainer);
-
   const image = document.createElement('img');
+  const textContainer = document.createElement('h1');
+
+  pageContainer.setAttribute('id', 'menu-page');
+  photoContainer.setAttribute('id', 'photo-container');
+  textContainer.setAttribute('id', 'text-container');
+  
+  container.appendChild(pageContainer);
+  pageContainer.appendChild(photoContainer);
+  pageContainer.appendChild(textContainer);
+  photoContainer.appendChild(image);
+
+  textContainer.innerHTML = 'THE INTERPLAY OF <br>EARTH AND SEA, <br>TRADITION AND EVOLUTION';
+
   image.setAttribute('src', 'menu.jpg')
   image.style.display = 'block';
-  photoContainer.appendChild(image);
 
   const menuContainer = document.createElement('div');
   menuContainer.setAttribute('id', 'menu-container')
-  container.appendChild(menuContainer);
+  pageContainer.appendChild(menuContainer);
   const header = document.createElement('h2');
   header.innerHTML = 'MENU';
   menuContainer.appendChild(header);

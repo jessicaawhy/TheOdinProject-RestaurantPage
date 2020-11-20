@@ -32,20 +32,22 @@ let currImgIndex = 1;
 let intervalId;
 
 function createHomePage() {
-  currImgIndex = 1;
   const container = document.getElementById('container')
 
+  const pageContainer = document.createElement('div');
   const photoContainer = document.createElement('div');
-  photoContainer.setAttribute('id', 'photo-container');
-  container.appendChild(photoContainer);
-
   const textContainer = document.createElement('h1');
-  textContainer.setAttribute('id', 'text-container');
-  container.appendChild(textContainer);
-
   const dotContainer = document.createElement('div');
+
+  pageContainer.setAttribute('id', 'home-page');
+  photoContainer.setAttribute('id', 'photo-container');
+  textContainer.setAttribute('id', 'text-container');
   dotContainer.setAttribute('id', 'dot-container');
-  container.appendChild(dotContainer);
+
+  container.appendChild(pageContainer);
+  pageContainer.appendChild(photoContainer);
+  pageContainer.appendChild(textContainer);
+  pageContainer.appendChild(dotContainer);
 
   for (let key in images) {
     let currImg = document.createElement('img');
@@ -78,7 +80,7 @@ function createHomePage() {
 
   const chefContainer = document.createElement('div');
   chefContainer.setAttribute('id', 'chef-container')
-  container.appendChild(chefContainer);
+  pageContainer.appendChild(chefContainer);
   const chef = document.createElement('h2');
   chef.innerHTML = 'CHEF';
   chefContainer.appendChild(chef);
@@ -89,7 +91,7 @@ function createHomePage() {
 
   const resContainer = document.createElement('div');
   resContainer.setAttribute('id', 'res-container')
-  container.appendChild(resContainer);
+  pageContainer.appendChild(resContainer);
   const reservation = document.createElement('h2');
   reservation.innerHTML = 'RESERVATIONS';
   resContainer.appendChild(reservation);
@@ -101,7 +103,7 @@ function createHomePage() {
   resContainer.appendChild(reservationText2);
 }
 
-function rotateImage(e) {
+function rotateImage(e, restart = false) {
   const currImage = document.getElementById(`home-photo-${currImgIndex}`);
   currImage.style.display = 'none';
   const currDot = document.getElementById(`dot-${currImgIndex}`);
@@ -109,6 +111,8 @@ function rotateImage(e) {
 
   if (e) {
     currImgIndex = Number(e.target.id.slice(4));
+  } else if (restart === true) {
+    currImgIndex = 1;
   } else {
     images[currImgIndex + 1] === undefined ? currImgIndex = 1 : currImgIndex += 1;
   }
@@ -121,12 +125,4 @@ function rotateImage(e) {
   text.innerHTML = images[currImgIndex]['text'];
 }
 
-function removeContainerElements() {
-  const container = document.getElementById('container');
-  clearInterval(intervalId);
-  while (container.firstChild) {
-    container.removeChild(container.firstChild);
-  }
-}
-
-export { createHomePage, removeContainerElements };
+export { createHomePage, rotateImage };
