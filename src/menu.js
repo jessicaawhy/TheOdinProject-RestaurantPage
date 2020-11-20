@@ -32,6 +32,7 @@ function createMenuPage() {
     classList: [],
   });
 
+  // get rid of id here
   const imageText = create({
     type: 'h1', 
     innerHTML: 'THE INTERPLAY OF <br>EARTH AND SEA, <br>TRADITION AND EVOLUTION',
