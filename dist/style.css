@@ -29,6 +29,10 @@
   width: 100%;
 }
 
+.photo-container img {
+  width: 100%;
+}
+
 #photo-container > * {
   display: none;
   width: 100%;
@@ -68,7 +72,7 @@
 #res-container, 
 #chef-container,
 #menu-container,
-#location-container {
+.main-container {
   display: flex;
   flex-direction: column;
   margin-top: 25px;
@@ -95,7 +99,7 @@ p {
   margin: 10px;
 }
 
-#location-container p {
+.main-container p {
   text-align: center;
 }
 
