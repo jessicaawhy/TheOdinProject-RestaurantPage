@@ -1,33 +1,70 @@
+import { create } from './createElement';
+
 function createMenuPage() {
   const container = document.getElementById('container');
 
-  const pageContainer = document.createElement('div');
+  const pageContainer = create({
+    type: 'div', 
+    innerHTML: '',
+    attributes: {
+      id: 'menu-page'
+    },
+    classList: [],
+  });
   pageContainer.style.display = "none";
 
-  const photoContainer = document.createElement('div');
-  const image = document.createElement('img');
-  const textContainer = document.createElement('h1');
+  const photoContainer = create({
+    type: 'div', 
+    innerHTML: '',
+    attributes: {
+      id: ''
+    },
+    classList: ['photo-container'],
+  });
 
-  pageContainer.setAttribute('id', 'menu-page');
-  photoContainer.setAttribute('id', 'photo-container');
-  textContainer.setAttribute('id', 'text-container');
+  const image = create({
+    type: 'img', 
+    innerHTML: '',
+    attributes: {
+      id: '',
+      src: 'menu.jpg'
+    },
+    classList: [],
+  });
+
+  const imageText = create({
+    type: 'h1', 
+    innerHTML: 'THE INTERPLAY OF <br>EARTH AND SEA, <br>TRADITION AND EVOLUTION',
+    attributes: {
+      id: 'text-container'
+    },
+    classList: [],
+  });
+
+  const mainContainer = create({
+    type: 'div', 
+    innerHTML: '',
+    attributes: {
+      id: ''
+    },
+    classList: ['main-container'],
+  });
+  
+  const menuHeading = create({
+    type: 'h2', 
+    innerHTML: 'MENU',
+    attributes: {
+      id: ''
+    },
+    classList: [],
+  });
   
   container.appendChild(pageContainer);
   pageContainer.appendChild(photoContainer);
-  pageContainer.appendChild(textContainer);
   photoContainer.appendChild(image);
-
-  textContainer.innerHTML = 'THE INTERPLAY OF <br>EARTH AND SEA, <br>TRADITION AND EVOLUTION';
-
-  image.setAttribute('src', 'menu.jpg')
-  image.style.display = 'block';
-
-  const menuContainer = document.createElement('div');
-  menuContainer.setAttribute('id', 'menu-container')
-  pageContainer.appendChild(menuContainer);
-  const header = document.createElement('h2');
-  header.innerHTML = 'MENU';
-  menuContainer.appendChild(header);
+  photoContainer.appendChild(imageText);
+  pageContainer.appendChild(mainContainer);
+  mainContainer.appendChild(menuHeading);
 
   let menuTextContainer = [
     'We offer an 18 course omakase menu with the opportunity to indulge in extra courses. Our menu changes in harmony with nature as we seek to creatively reveal the essence of each ingredient at its peak.',
@@ -37,9 +74,16 @@ function createMenuPage() {
   ]
 
   menuTextContainer.forEach(text => {
-    const menuText = document.createElement('p');
-    menuText.innerHTML = text;
-    menuContainer.appendChild(menuText);
+    const menuText = create({
+      type: 'p', 
+      innerHTML: text,
+      attributes: {
+        id: ''
+      },
+      classList: [],
+    });
+
+    mainContainer.appendChild(menuText);
   })
 }
 

@@ -100,6 +100,10 @@ p {
 }
 
 .main-container p {
+  text-align: left;
+}
+
+#location-page .main-container p {
   text-align: center;
 }
 

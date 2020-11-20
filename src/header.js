@@ -48,8 +48,15 @@ function createHeader() {
   const links = ['home', 'menu', 'location'];
 
   links.forEach(link => {
-    const current = document.createElement('a');
-    current.innerHTML = link.toUpperCase();
+    const current = create({
+      type: 'a', 
+      innerHTML: link.toUpperCase(),
+      attributes: {
+        id: ''
+      },
+      classList: [],
+    });
+
     linkContainer.appendChild(current);
   });
 }
