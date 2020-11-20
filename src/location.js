@@ -1,4 +1,4 @@
-import { create } from './createElement'
+import { create } from './createElement';
 
 function createLocationPage() {
   const container = document.getElementById('container');
@@ -69,7 +69,7 @@ function createLocationPage() {
       },
       classList: [],
     });
-    
+
     mainContainer.appendChild(locationText);
   });
 }
