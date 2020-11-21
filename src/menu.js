@@ -37,7 +37,7 @@ function createMenuPage() {
     type: 'h1', 
     innerHTML: 'THE INTERPLAY OF <br>EARTH AND SEA, <br>TRADITION AND EVOLUTION',
     attributes: {
-      id: 'text-container'
+      id: ''
     },
     classList: [],
   });

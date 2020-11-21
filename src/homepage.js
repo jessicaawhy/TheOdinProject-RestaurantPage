@@ -5,7 +5,7 @@ let currImgIndex = 1;
 let intervalId;
 
 function createHomePage() {
-  const container = document.getElementById('container')
+  const container = document.getElementById('container');
 
   const pageContainer = create({
     type: 'div', 
@@ -20,7 +20,7 @@ function createHomePage() {
     type: 'div', 
     innerHTML: '',
     attributes: {
-      id: ''
+      id: 'slider'
     },
     classList: ['photo-container'],
   });
@@ -29,7 +29,7 @@ function createHomePage() {
     type: 'h1', 
     innerHTML: '',
     attributes: {
-      id: 'text-container'
+      id: 'slider-text'
     },
     classList: [],
   });
@@ -54,7 +54,7 @@ function createHomePage() {
 
   container.appendChild(pageContainer);
   pageContainer.appendChild(photoContainer);
-  pageContainer.appendChild(imageText);
+  photoContainer.appendChild(imageText);
   pageContainer.appendChild(dotContainer);
   pageContainer.appendChild(mainContainer);
 
@@ -68,8 +68,7 @@ function createHomePage() {
       },
       classList: [],
     });
-    currentImage.style.display = 'none';
-    
+
     const currentDot = create({
       type: 'a', 
       innerHTML: '',
@@ -80,9 +79,10 @@ function createHomePage() {
       classList: [],
     });
     
+    currentImage.style.display = 'none';
     photoContainer.appendChild(currentImage);
     dotContainer.appendChild(currentDot);
-    currentDot.addEventListener('click', clickImageDot)
+    currentDot.addEventListener('click', clickImageDot);
   }
 
   const chefHeading = create({
@@ -137,14 +137,7 @@ function createHomePage() {
   mainContainer.appendChild(resText1);
   mainContainer.appendChild(resText2);
 
-  // try to have a function that handles this later
-  const image = document.getElementById('home-photo-1');
-  image.style.display = 'block';
-  const text = document.getElementById('text-container');
-  text.innerHTML = images[1]['text'];
-  const dot = document.getElementById('dot-1')
-  dot.style.backgroundColor = 'black';
-
+  rotateImage('', true);
   intervalId = setInterval(() => {
     rotateImage();
   }, 5000);
@@ -168,7 +161,7 @@ function rotateImage(e, restart = false) {
   nextImage.style.display = 'block';
   const nextDot = document.getElementById(`dot-${currImgIndex}`);
   nextDot.style.backgroundColor = 'black';
-  const text = document.getElementById('text-container');
+  const text = document.getElementById('slider-text');
   text.innerHTML = images[currImgIndex]['text'];
 }
 

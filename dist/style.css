@@ -18,27 +18,35 @@
   padding: 15px;
 }
 
-#header-links > * {
+#header-links a {
   padding: 15px;
 }
 
+#header-links:hover > a {
+  color: lightslategray;
+}
+#header-links a:hover {
+  color: black;
+}
+
+#header-links a:active {
+  transform: translate(5px);
+  color: brown;
+}
+
 /* Photo Container Section */
-.container {
+.photo-container {
   position: relative;
   text-align: left;
   width: 100%;
+  
 }
 
 .photo-container img {
   width: 100%;
 }
 
-#photo-container > * {
-  display: none;
-  width: 100%;
-}
-
-#text-container {
+.photo-container h1 {
   position: absolute;
   top: 20%;
   left: 7%;
@@ -61,17 +69,8 @@
   margin-left: 5px;
   margin-right: 5px;
   margin-top: 15px;
-  margin-bottom: 25px;
 }
 
-/* Reservation */
-#chef-image {
-  width: 400px;
-}
-
-#res-container, 
-#chef-container,
-#menu-container,
 .main-container {
   display: flex;
   flex-direction: column;
@@ -79,38 +78,26 @@
   margin-bottom: 25px;
 }
 
-#chef-image {
-  width: 600px;
-  align-self: center;
-  margin: 10px;
-}
-
-h2 {
+.main-container h2 {
   color: brown;
   font-size: 40px;
   text-align: center;
   margin: 10px;
 }
 
-p {
+.main-container p {
   text-align: left;
   width: 50%;
   align-self: center;
   margin: 10px;
 }
 
-.main-container p {
-  text-align: left;
-}
-
 #location-page .main-container p {
   text-align: center;
 }
 
-#link-container:hover > *{
-  color: lightslategray;
-}
-
-#link-container a:hover {
-  color: black;
+#chef-image {
+  width: 600px;
+  align-self: center;
+  margin: 10px;
 }
