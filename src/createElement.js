@@ -10,6 +10,12 @@ function create(elementObject) {
       element.classList.add(elementObject['classList'][i]);
     }
   }
+  if (elementObject['parentElement']) {
+    elementObject['parentElement'].appendChild(element);
+  } else if (elementObject['parentID']) {
+    const parent = document.getElementById(elementObject['parentID']);
+    parent.appendChild(element);
+  }
 
   return element;
 }

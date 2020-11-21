@@ -1,8 +1,6 @@
 import { create } from './createElement';
 
 function createLocationPage() {
-  const container = document.getElementById('container');
-
   const pageContainer = create({
     type: 'div', 
     innerHTML: '',
@@ -10,6 +8,7 @@ function createLocationPage() {
       id: 'location-page'
     },
     classList: [],
+    parentID: 'container',
   });
   pageContainer.style.display = "none";
 
@@ -20,6 +19,7 @@ function createLocationPage() {
       id: ''
     },
     classList: ['photo-container'],
+    parentElement: pageContainer,
   });
 
   const image = create({
@@ -30,6 +30,7 @@ function createLocationPage() {
       src: 'location.jpg'
     },
     classList: [],
+    parentElement: photoContainer,
   });
   
   const mainContainer = create({
@@ -39,6 +40,7 @@ function createLocationPage() {
       id: ''
     },
     classList: ['main-container'],
+    parentElement: pageContainer,
   });
   
   const locationHeading = create({
@@ -48,18 +50,12 @@ function createLocationPage() {
       id: ''
     },
     classList: [],
+    parentElement: mainContainer,
   });
-  
-  container.appendChild(pageContainer);
-  pageContainer.appendChild(photoContainer);
-  photoContainer.appendChild(image);
-  pageContainer.appendChild(mainContainer);
-  mainContainer.appendChild(locationHeading);
 
   let locationTextContainer = [
     '123 Fake Street  @ RestaurantProject',
-  ]
-  
+  ];
   locationTextContainer.forEach(text => {
     const locationText = create({
       type: 'p', 
@@ -68,9 +64,8 @@ function createLocationPage() {
         id: ''
       },
       classList: [],
+      parentElement: mainContainer,
     });
-
-    mainContainer.appendChild(locationText);
   });
 }
 

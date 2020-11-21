@@ -5,8 +5,6 @@ let currImgIndex = 1;
 let intervalId;
 
 function createHomePage() {
-  const container = document.getElementById('container');
-
   const pageContainer = create({
     type: 'div', 
     innerHTML: '',
@@ -14,6 +12,7 @@ function createHomePage() {
       id: 'home-page'
     },
     classList: [],
+    parentID: 'container',
   });
 
   const photoContainer = create({
@@ -23,6 +22,7 @@ function createHomePage() {
       id: 'slider'
     },
     classList: ['photo-container'],
+    parentElement: pageContainer,
   });
 
   const imageText = create({
@@ -32,6 +32,7 @@ function createHomePage() {
       id: 'slider-text'
     },
     classList: [],
+    parentElement: photoContainer,
   });
 
   const dotContainer = create({
@@ -41,6 +42,7 @@ function createHomePage() {
       id: 'dot-container'
     },
     classList: [],
+    parentElement: pageContainer,
   });
 
   const mainContainer = create({
@@ -50,13 +52,8 @@ function createHomePage() {
       id: ''
     },
     classList: ['main-container'],
+    parentElement: pageContainer,
   });
-
-  container.appendChild(pageContainer);
-  pageContainer.appendChild(photoContainer);
-  photoContainer.appendChild(imageText);
-  pageContainer.appendChild(dotContainer);
-  pageContainer.appendChild(mainContainer);
 
   for (let key in images) {
     const currentImage = create({
@@ -67,7 +64,9 @@ function createHomePage() {
         src: `./homepage-images/${key}.jpg`
       },
       classList: [],
+      parentElement: photoContainer,
     });
+    currentImage.style.display = 'none';
 
     const currentDot = create({
       type: 'a', 
@@ -77,11 +76,8 @@ function createHomePage() {
         src: `./homepage-images/${key}.jpg`
       },
       classList: [],
+      parentElement: dotContainer,
     });
-    
-    currentImage.style.display = 'none';
-    photoContainer.appendChild(currentImage);
-    dotContainer.appendChild(currentDot);
     currentDot.addEventListener('click', clickImageDot);
   }
 
@@ -92,6 +88,7 @@ function createHomePage() {
       id: ''
     },
     classList: [],
+    parentElement: mainContainer,
   });
 
   const chefImage = create({
@@ -102,6 +99,7 @@ function createHomePage() {
       src: 'chef.jpeg'
     },
     classList: [],
+    parentElement: mainContainer,
   });
   
   const resHeading = create({
@@ -111,6 +109,7 @@ function createHomePage() {
       id: ''
     },
     classList: [],
+    parentElement: mainContainer,
   });
   
   const resText1 = create({
@@ -120,6 +119,7 @@ function createHomePage() {
       id: '',
     },
     classList: [],
+    parentElement: mainContainer,
   });
   
   const resText2 = create({
@@ -129,13 +129,8 @@ function createHomePage() {
       id: '',
     },
     classList: [],
+    parentElement: mainContainer,
   });
-
-  mainContainer.appendChild(chefHeading);
-  mainContainer.appendChild(chefImage);
-  mainContainer.appendChild(resHeading);
-  mainContainer.appendChild(resText1);
-  mainContainer.appendChild(resText2);
 
   rotateImage('', true);
   intervalId = setInterval(() => {

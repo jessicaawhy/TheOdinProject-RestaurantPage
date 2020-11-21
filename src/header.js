@@ -1,8 +1,6 @@
 import { create } from './createElement';
 
 function createHeader() {
-  const content = document.getElementById('content');
-
   const header = create({
     type: 'div', 
     innerHTML: '',
@@ -10,6 +8,7 @@ function createHeader() {
       id: 'header'
     },
     classList: [],
+    parentID: 'content',
   });
 
   const logo = create({
@@ -20,6 +19,7 @@ function createHeader() {
       src: 'blossom.png'
     },
     classList: [],
+    parentElement: header,
   });
 
   const linkContainer = create({
@@ -29,6 +29,7 @@ function createHeader() {
       id: 'header-links'
     },
     classList: [],
+    parentElement: header,
   });
 
   const container = create({
@@ -38,15 +39,10 @@ function createHeader() {
       id: 'container'
     },
     classList: [],
+    parentID: 'content',
   });
   
-  content.appendChild(header);
-  header.appendChild(logo);
-  header.appendChild(linkContainer);
-  content.appendChild(container);
-  
   const links = ['home', 'menu', 'location'];
-
   links.forEach(link => {
     const current = create({
       type: 'a', 
@@ -55,9 +51,8 @@ function createHeader() {
         id: ''
       },
       classList: [],
+      parentElement: linkContainer,
     });
-
-    linkContainer.appendChild(current);
   });
 }
 
