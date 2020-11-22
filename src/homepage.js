@@ -1,5 +1,5 @@
 import { create } from './createElement';
-import { images } from './images';
+import { imagesObj } from './imagesObj';
 
 let currImgIndex = 1;
 let intervalId;
@@ -55,13 +55,13 @@ function createHomePage() {
     parentElement: pageContainer,
   });
 
-  for (let key in images) {
+  for (let key in imagesObj) {
     const currentImage = create({
       type: 'img', 
       innerHTML: '',
       attributes: {
         id: `home-photo-${key}`,
-        src: `./homepage-images/${key}.jpg`
+        src: `../src/public/slider/${key}.jpg`
       },
       classList: [],
       parentElement: photoContainer,
@@ -73,7 +73,6 @@ function createHomePage() {
       innerHTML: '',
       attributes: {
         id: `dot-${key}`,
-        src: `./homepage-images/${key}.jpg`
       },
       classList: [],
       parentElement: dotContainer,
@@ -96,7 +95,7 @@ function createHomePage() {
     innerHTML: '',
     attributes: {
       id: 'chef-image',
-      src: 'chef.jpeg'
+      src: '../src/public/chef.jpeg'
     },
     classList: [],
     parentElement: mainContainer,
@@ -149,7 +148,7 @@ function rotateImage(e, restart = false) {
   } else if (restart === true) {
     currImgIndex = 1;
   } else {
-    images[currImgIndex + 1] === undefined ? currImgIndex = 1 : currImgIndex += 1;
+    imagesObj[currImgIndex + 1] === undefined ? currImgIndex = 1 : currImgIndex += 1;
   }
 
   const nextImage = document.getElementById(`home-photo-${currImgIndex}`);
@@ -157,7 +156,7 @@ function rotateImage(e, restart = false) {
   const nextDot = document.getElementById(`dot-${currImgIndex}`);
   nextDot.style.backgroundColor = 'black';
   const text = document.getElementById('slider-text');
-  text.innerHTML = images[currImgIndex]['text'];
+  text.innerHTML = imagesObj[currImgIndex]['text'];
 }
 
 function clickImageDot(e) {

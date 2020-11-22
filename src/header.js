@@ -16,7 +16,7 @@ function createHeader() {
     innerHTML: '',
     attributes: {
       id: 'header-logo',
-      src: 'blossom.png'
+      src: '../src/public/blossom.png'
     },
     classList: [],
     parentElement: header,

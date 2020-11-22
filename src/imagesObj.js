@@ -1,4 +1,4 @@
-const images = {
+const imagesObj = {
   1: {
     text: 'WE ARE DEVOTED <br>TO CRAFTING MOMENTS <br>THAT TRANSCEND',
   },
@@ -28,4 +28,4 @@ const images = {
   },
 }
 
-export { images };
+export { imagesObj };
