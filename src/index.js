@@ -11,8 +11,11 @@ function renderPage() {
 
   let links = document.getElementById('header-links').childNodes;
   links.forEach(link => {
-    link.addEventListener('click', (e) => updatePage(e))
+    link.addEventListener('click', (e) => updatePage(e));
   })
+
+  let logo = document.getElementById('header-logo');
+  logo.addEventListener('click', (e) => updatePage(e));
 }
 
 function updatePage(e) {
@@ -24,13 +27,16 @@ function updatePage(e) {
     page.style.display = "none";
   })
 
-  if (e.target.innerHTML === "HOME") {
+  if (e.target.innerHTML === 'HOME' || e.target.id === 'header-logo') {
     rotateImage('', true);
-    homePage.style.display = 'block'
-  } else if (e.target.innerHTML === "MENU") {
-    menuPage.style.display = 'block'
-  } else if (e.target.innerHTML === "LOCATION") {
-    locationPage.style.display = 'block'
+    homePage.style.display = 'block';
+  } else if (e.target.innerHTML === 'MENU') {
+    menuPage.style.display = 'block';
+  } else if (e.target.innerHTML === 'LOCATION') {
+    locationPage.style.display = 'block';
+  } else {
+    rotateImage('', true);
+    homePage.style.display = 'block';
   }
 }
 
