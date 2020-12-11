@@ -27,7 +27,7 @@ function createMenuPage() {
     innerHTML: '',
     attributes: {
       id: '',
-      src: '../src/public/menu.jpg'
+      src: './src/public/menu.jpg'
     },
     classList: [],
     parentElement: photoContainer,

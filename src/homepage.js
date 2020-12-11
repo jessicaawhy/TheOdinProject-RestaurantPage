@@ -61,7 +61,7 @@ function createHomePage() {
       innerHTML: '',
       attributes: {
         id: `home-photo-${key}`,
-        src: `../src/public/slider/${key}.jpg`
+        src: `./src/public/slider/${key}.jpg`
       },
       classList: [],
       parentElement: photoContainer,
@@ -95,7 +95,7 @@ function createHomePage() {
     innerHTML: '',
     attributes: {
       id: 'chef-image',
-      src: '../src/public/chef.jpeg'
+      src: './src/public/chef.jpeg'
     },
     classList: [],
     parentElement: mainContainer,

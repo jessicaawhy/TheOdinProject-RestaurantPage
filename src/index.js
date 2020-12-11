@@ -1,3 +1,4 @@
+import './styles/style.css';
 import { createHeader } from './header';
 import { createHomePage, rotateImage } from './homepage';
 import { createMenuPage } from './menu';   

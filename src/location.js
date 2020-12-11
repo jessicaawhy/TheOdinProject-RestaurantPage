@@ -27,7 +27,7 @@ function createLocationPage() {
     innerHTML: '',
     attributes: {
       id: '',
-      src: '../src/public/location.jpg'
+      src: './src/public/location.jpg'
     },
     classList: [],
     parentElement: photoContainer,
