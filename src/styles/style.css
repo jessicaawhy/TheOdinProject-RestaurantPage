@@ -101,3 +101,15 @@
   align-self: center;
   margin: 10px;
 }
+
+iframe {
+  margin: 0 auto;
+  height: 400px;
+  width: 600px;
+}
+
+#home-page,
+#location-page,
+#menu-page {
+  margin-bottom: 100px;
+}
